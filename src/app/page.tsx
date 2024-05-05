@@ -2,13 +2,142 @@
 // import { getServerAuthSession } from "@/server/auth";
 // import { api } from "@/trpc/server";
 import type { NextPage } from "next";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Plane, MoveRight } from "lucide-react";
+import Link from "next/link";
+import { Separator } from "@/components/ui/separator";
 
+const voyageItems = [
+  {
+    year: 1991,
+    itemTitle: "Year I was born",
+    itemDescription: "this is optional",
+  },
+  {
+    year: 2011,
+    itemTitle: "Year I got into university",
+    itemDescription: "this also is optional",
+  },
+  {
+    year: 2021,
+    itemTitle: "Year I got married",
+    itemDescription: "this is optional",
+  },
+  {
+    year: 1992,
+    itemTitle: "Year I was born",
+    itemDescription: "this is optional",
+  },
+  {
+    year: 2013,
+    itemTitle: "Year I got into university",
+    itemDescription: "this also is optional",
+  },
+  {
+    year: 2023,
+    itemTitle: "Year I got married",
+    itemDescription: "this is optional",
+  },
+  {
+    year: 1991,
+    itemTitle: "Year I was born",
+    itemDescription: "this is optional",
+  },
+  {
+    year: 2011,
+    itemTitle: "Year I got into university",
+    itemDescription: "this also is optional",
+  },
+  {
+    year: 2021,
+    itemTitle: "Year I got married",
+    itemDescription: "this is optional",
+  },
+  {
+    year: 1992,
+    itemTitle: "Year I was born",
+    itemDescription: "this is optional",
+  },
+  {
+    year: 2013,
+    itemTitle: "Year I got into university",
+    itemDescription: "this also is optional",
+  },
+  {
+    year: 2023,
+    itemTitle: "Year I got married",
+    itemDescription: "this is optional",
+  },
+];
 
 const Home: NextPage = async () => {
   // const hello = await api.post.hello({ text: "from tRPC" });
   // const session = await getServerAuthSession();
 
-  return <h1>Hello World</h1>;
+  return (
+    <div className="flex">
+      <div className="flex h-full flex-col gap-4 lg:w-2/5">
+        <h1 className="text-3xl">Hi, I&apos;m Berke. 🤘</h1>
+        <p>
+          I&apos;m a software developer who loves coding, litterature, movies,
+          music and gaming.
+        </p>
+
+        <p>
+          I currently working as a project lead / fullstack developer at a
+          project that I&apos;ve founded,
+          <Link
+            href={"https://www.teamrandom.dev/"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-colors duration-300 hover:text-blue-600"
+          >
+            {" "}
+            Team Random.
+          </Link>
+        </p>
+        <p>
+          I&apos;ve previously worked on volunteer projects, media agencies and
+          database companies to learn tech environment. My biggest experience
+          lies as a Senior CPU Specialist at Project Leia (which is a pseudo for
+          a very big tech company that rhymes with mapple).
+        </p>
+        <p>
+          I love building (and occasionally designing) pixel-perfect, beautiful
+          interfaces with scalable, fast backends.{" "}
+        </p>
+      </div>
+      <div className="flex h-full w-3/5 flex-col px-16">
+        <h2 className="flex items-center gap-2 pb-4 text-3xl">
+          My Voyage <Plane size={32} />
+        </h2>
+        <Separator className="mb-4" />
+        <ScrollArea className="h-[28rem] w-full">
+          <ul>
+            {voyageItems
+              .sort((a, b) => b.year - a.year)
+              .map((item, index) => {
+                return (
+                  <li
+                    className="mb-4 flex h-fit w-full items-center"
+                    key={index}
+                  >
+                    <MoveRight className="mr-2" />
+                    <div className="mr-4 text-2xl">{item.year}</div>
+                    <div className="flex flex-col">
+                      <div>{item.itemTitle}</div>
+                      <span className="text-slate-400">
+                        {item.itemDescription}
+                      </span>
+                    </div>
+                  </li>
+                );
+              })}
+          </ul>
+        </ScrollArea>
+      </div>
+    </div>
+  );
 };
 
 // async function CrudShowcase() {

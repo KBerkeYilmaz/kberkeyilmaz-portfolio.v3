@@ -1,9 +1,12 @@
-
 import type { NextPage } from "next";
 
 
 const About: NextPage = async () => {
-  return <h1>This is Works</h1>;
+  return (
+    <div>
+      <h1>This is works</h1>
+    </div>
+  )
 };
 
 export default About;
