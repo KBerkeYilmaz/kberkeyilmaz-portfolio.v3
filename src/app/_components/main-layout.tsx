@@ -97,23 +97,23 @@ const MainLayout = async ({ children }: { children: React.ReactNode }) => {
                     </span>
                   </div>
                 </div>
-                <Link href="#" className="hover:text-foreground">
+                <Link href="/" className="hover:text-foreground">
                   Home
                 </Link>
                 <Link
-                  href="#"
+                  href="/about"
                   className="text-muted-foreground hover:text-foreground"
                 >
                   About
                 </Link>
                 <Link
-                  href="#"
+                  href="/works"
                   className="text-muted-foreground hover:text-foreground"
                 >
                   Works
                 </Link>
                 <Link
-                  href="#"
+                  href="/blog"
                   className="text-muted-foreground hover:text-foreground"
                 >
                   Blog

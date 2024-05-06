@@ -75,7 +75,7 @@ const Home: NextPage = async () => {
   // const session = await getServerAuthSession();
 
   return (
-    <div className="flex h-full animate-fadeIn flex-col md:flex-row overflow-scroll gap-20 md:gap-0">
+    <div className="flex h-full animate-fadeIn flex-col gap-20 overflow-scroll md:flex-row md:gap-0">
       <div className="flex h-full flex-col gap-4 lg:w-2/5">
         <h1 className="text-4xl">Hi, I&apos;m Berke. 🤘</h1>
         <p>
