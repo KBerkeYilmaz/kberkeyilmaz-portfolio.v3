@@ -75,7 +75,7 @@ const Home: NextPage = async () => {
   // const session = await getServerAuthSession();
 
   return (
-    <div className="flex h-full animate-fadeIn flex-col gap-20 overflow-scroll md:flex-row md:gap-0">
+    <div className="flex h-full animate-fadeIn flex-col gap-20 overflow-scroll lg:flex-row lg:gap-0">
       <div className="flex h-full flex-col gap-4 lg:w-2/5">
         <h1 className="text-2xl md:text-4xl">Hi, I&apos;m Berke. 🤘</h1>
         <p>
@@ -108,7 +108,7 @@ const Home: NextPage = async () => {
           interfaces with scalable, fast backends.{" "}
         </p>
       </div>
-      <div className="flex h-full w-full flex-col py-8 md:w-3/5 md:px-16 md:py-0">
+      <div className="flex h-full w-full flex-col mt-32 sm:mt-0 lg:w-3/5 lg:px-16 md:py-0">
         <h2 className="flex items-center gap-2 pb-4 text-3xl">
           My Voyage <Plane size={32} />
         </h2>
