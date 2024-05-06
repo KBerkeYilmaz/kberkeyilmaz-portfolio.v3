@@ -36,7 +36,9 @@ const MainLayout = async ({ children }: { children: React.ReactNode }) => {
               </Avatar>
               <div>
                 <h1>Kutalmış Berke Yılmaz</h1>
-                <span className="text-slate-400 text-xs text-pretty ">Software Developer</span>
+                <span className="text-pretty text-xs text-slate-400 ">
+                  Software Developer
+                </span>
               </div>
             </div>
             <Link
@@ -83,13 +85,18 @@ const MainLayout = async ({ children }: { children: React.ReactNode }) => {
             </SheetTrigger>
             <SheetContent side="left">
               <nav className="grid gap-6 text-lg font-medium">
-                <Link
-                  href="#"
-                  className="flex items-center gap-2 text-lg font-semibold"
-                >
-                  <Package2 className="h-6 w-6" />
-                  <span className="sr-only">Acme Inc</span>
-                </Link>
+                <div className="flex w-52 gap-2 tracking-tighter">
+                  <Avatar>
+                    <AvatarImage src="/profilepic.webp" />
+                    <AvatarFallback>KB</AvatarFallback>
+                  </Avatar>
+                  <div>
+                    <h1 className="text-sm">Kutalmış Berke Yılmaz</h1>
+                    <span className="text-pretty text-xs text-slate-400 ">
+                      Software Developer
+                    </span>
+                  </div>
+                </div>
                 <Link href="#" className="hover:text-foreground">
                   Home
                 </Link>
@@ -155,7 +162,7 @@ const MainLayout = async ({ children }: { children: React.ReactNode }) => {
             </DropdownMenu> */}
           </div>
         </header>
-        <main className="flex flex-1 flex-col gap-4 p-4 md:gap-8 md:p-8">
+        <main className="flex h-fit flex-1 flex-col gap-4 overflow-y-hidden p-4 md:gap-8 md:p-8">
           {children}
         </main>
       </div>

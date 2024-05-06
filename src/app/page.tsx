@@ -75,9 +75,9 @@ const Home: NextPage = async () => {
   // const session = await getServerAuthSession();
 
   return (
-    <div className="flex">
+    <div className="flex h-full flex-col md:flex-row animate-fadeIn">
       <div className="flex h-full flex-col gap-4 lg:w-2/5">
-        <h1 className="text-3xl">Hi, I&apos;m Berke. 🤘</h1>
+        <h1 className="text-4xl">Hi, I&apos;m Berke. 🤘</h1>
         <p>
           I&apos;m a software developer who loves coding, litterature, movies,
           music and gaming.
@@ -97,29 +97,30 @@ const Home: NextPage = async () => {
           </Link>
         </p>
         <p>
-          I&apos;ve previously worked on volunteer projects, media agencies and
-          database companies to learn tech environment. My biggest experience
-          lies as a Senior CPU Specialist at Project Leia (which is a pseudo for
-          a very big tech company that rhymes with mapple).
+          I&apos;ve worked on volunteer projects, media agencies and database
+          companies to learn tech environment, how to manage expectations,
+          learning team dynamics. My longest experience about tech lies as a
+          Senior CPU Specialist at Project Leia (which is a pseudo for a very
+          big tech company that rhymes with mapple).
         </p>
         <p>
           I love building (and occasionally designing) pixel-perfect, beautiful
           interfaces with scalable, fast backends.{" "}
         </p>
       </div>
-      <div className="flex h-full w-3/5 flex-col px-16">
+      <div className="flex h-full w-full flex-col py-8 md:w-3/5 md:px-16 md:py-0">
         <h2 className="flex items-center gap-2 pb-4 text-3xl">
           My Voyage <Plane size={32} />
         </h2>
         <Separator className="mb-4" />
-        <ScrollArea className="h-[28rem] w-full">
+        <ScrollArea className="h-full w-full">
           <ul>
             {voyageItems
               .sort((a, b) => b.year - a.year)
               .map((item, index) => {
                 return (
                   <li
-                    className="mb-4 flex h-fit w-full items-center"
+                    className="mb-4 flex h-20 w-full items-center"
                     key={index}
                   >
                     <MoveRight className="mr-2" />

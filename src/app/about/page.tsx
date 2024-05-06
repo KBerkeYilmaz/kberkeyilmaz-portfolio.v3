@@ -3,7 +3,7 @@ import type { NextPage } from "next";
 const About: NextPage = async () => {
   return (
     <>
-    <div className="w-1/2">
+    <div className="w-1/2 animate-fadeIn">
       <p>
         Hello!
         <br />
