@@ -1,15 +1,10 @@
-import Link from "next/link";
-import { CircleUser, Menu, Package2 } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-  SheetClose,
-} from "@/components/ui/sheet";
+import { Sheet, SheetTrigger } from "@/components/ui/sheet";
 import { ModeToggle } from "@/components/theme-toggle";
-
+import NavLinksMobile from "@/components/NavLinksMobile";
+import NavLinks from "@/components/NavLinks";
 const MainLayout = async ({ children }: { children: React.ReactNode }) => {
   // const hello = await api.post.hello({ text: "from tRPC" });
   // const session = await getServerAuthSession();
@@ -38,36 +33,7 @@ const MainLayout = async ({ children }: { children: React.ReactNode }) => {
                 </span>
               </div>
             </div>
-            <Link
-              href="/"
-              className="text-foreground transition-colors hover:text-foreground"
-            >
-              Home
-            </Link>
-            <Link
-              href="/about"
-              className="text-muted-foreground transition-colors hover:text-foreground"
-            >
-              About
-            </Link>
-            <Link
-              href="/works"
-              className="text-muted-foreground transition-colors hover:text-foreground"
-            >
-              Works
-            </Link>
-            <Link
-              href="/blog"
-              className="text-muted-foreground transition-colors hover:text-foreground"
-            >
-              Blog
-            </Link>
-            <Link
-              href="#"
-              className="text-muted-foreground transition-colors hover:text-foreground"
-            >
-              CV
-            </Link>
+            <NavLinks />
           </nav>
           <Sheet>
             <SheetTrigger asChild>
@@ -80,49 +46,7 @@ const MainLayout = async ({ children }: { children: React.ReactNode }) => {
                 <span className="sr-only">Toggle navigation menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="left">
-              <nav className="grid gap-6 text-lg font-medium">
-                <div className="flex w-52 gap-2 tracking-tighter">
-                  <Avatar>
-                    <AvatarImage src="/profilepic.webp" />
-                    <AvatarFallback>KB</AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <h1 className="text-sm">Kutalmış Berke Yılmaz</h1>
-                    <span className="text-pretty text-xs text-slate-400 ">
-                      Software Developer
-                    </span>
-                  </div>
-                </div>
-                <Link href="/" className="hover:text-foreground">
-                  <SheetClose> Home</SheetClose>
-                </Link>
-                <Link
-                  href="/about"
-                  className="text-muted-foreground hover:text-foreground"
-                >
-                  <SheetClose>About</SheetClose> 
-                </Link>
-                <Link
-                  href="/works"
-                  className="text-muted-foreground hover:text-foreground"
-                >
-                  <SheetClose>Works</SheetClose>
-                </Link>
-                <Link
-                  href="/blog"
-                  className="text-muted-foreground hover:text-foreground"
-                >
-                  <SheetClose>Blog</SheetClose>
-                </Link>
-                <Link
-                  href="#"
-                  className="text-muted-foreground hover:text-foreground"
-                >
-                  CV
-                </Link>
-              </nav>
-            </SheetContent>
+            <NavLinksMobile />
           </Sheet>
           <div className="flex w-full items-center justify-end gap-4 md:ml-auto md:gap-2 lg:gap-4">
             {/* <form className="ml-auto flex-1 sm:flex-initial">

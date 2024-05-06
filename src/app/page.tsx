@@ -77,7 +77,7 @@ const Home: NextPage = async () => {
   return (
     <div className="flex h-full animate-fadeIn flex-col gap-20 overflow-scroll md:flex-row md:gap-0">
       <div className="flex h-full flex-col gap-4 lg:w-2/5">
-        <h1 className="text-4xl">Hi, I&apos;m Berke. 🤘</h1>
+        <h1 className="text-2xl md:text-4xl">Hi, I&apos;m Berke. 🤘</h1>
         <p>
           I&apos;m a software developer who loves coding, litterature, movies,
           music and gaming.
@@ -101,7 +101,7 @@ const Home: NextPage = async () => {
           companies to learn tech environment, what to expect from what I do and
           also, how to manage expectations. My longest experience about tech
           lies as a Senior CPU Specialist at Project Leia (which is a pseudo for
-          a very big tech company that rhymes with mapple).
+          a very big tech company that rhymes with maple).
         </p>
         <p>
           I love building (and occasionally designing) pixel-perfect, beautiful
