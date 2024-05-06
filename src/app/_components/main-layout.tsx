@@ -3,14 +3,11 @@ import { CircleUser, Menu, Package2 } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetClose,
+} from "@/components/ui/sheet";
 import { ModeToggle } from "@/components/theme-toggle";
 
 const MainLayout = async ({ children }: { children: React.ReactNode }) => {
@@ -98,25 +95,25 @@ const MainLayout = async ({ children }: { children: React.ReactNode }) => {
                   </div>
                 </div>
                 <Link href="/" className="hover:text-foreground">
-                  Home
+                  <SheetClose> Home</SheetClose>
                 </Link>
                 <Link
                   href="/about"
                   className="text-muted-foreground hover:text-foreground"
                 >
-                  About
+                  <SheetClose>About</SheetClose> 
                 </Link>
                 <Link
                   href="/works"
                   className="text-muted-foreground hover:text-foreground"
                 >
-                  Works
+                  <SheetClose>Works</SheetClose>
                 </Link>
                 <Link
                   href="/blog"
                   className="text-muted-foreground hover:text-foreground"
                 >
-                  Blog
+                  <SheetClose>Blog</SheetClose>
                 </Link>
                 <Link
                   href="#"
@@ -139,27 +136,6 @@ const MainLayout = async ({ children }: { children: React.ReactNode }) => {
                 </div>
               </form> */}
             <ModeToggle />
-
-            {/* <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button
-                  variant="secondary"
-                  size="icon"
-                  className="rounded-full"
-                >
-                  <CircleUser className="h-5 w-5" />
-                  <span className="sr-only">Toggle user menu</span>
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem>Settings</DropdownMenuItem>
-                <DropdownMenuItem>Support</DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem>Logout</DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu> */}
           </div>
         </header>
         <main className="flex h-fit flex-1 flex-col gap-4 overflow-y-hidden pt-4 md:gap-8 md:p-8">
