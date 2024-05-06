@@ -162,7 +162,7 @@ const MainLayout = async ({ children }: { children: React.ReactNode }) => {
             </DropdownMenu> */}
           </div>
         </header>
-        <main className="flex h-fit flex-1 flex-col gap-4 overflow-y-hidden p-4 md:gap-8 md:p-8">
+        <main className="flex h-fit flex-1 flex-col gap-4 overflow-y-hidden pt-4 md:gap-8 md:p-8">
           {children}
         </main>
       </div>

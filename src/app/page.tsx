@@ -75,7 +75,7 @@ const Home: NextPage = async () => {
   // const session = await getServerAuthSession();
 
   return (
-    <div className="flex h-full flex-col md:flex-row animate-fadeIn">
+    <div className="flex h-full animate-fadeIn flex-col md:flex-row overflow-scroll gap-20 md:gap-0">
       <div className="flex h-full flex-col gap-4 lg:w-2/5">
         <h1 className="text-4xl">Hi, I&apos;m Berke. 🤘</h1>
         <p>
@@ -98,10 +98,10 @@ const Home: NextPage = async () => {
         </p>
         <p>
           I&apos;ve worked on volunteer projects, media agencies and database
-          companies to learn tech environment, how to manage expectations,
-          learning team dynamics. My longest experience about tech lies as a
-          Senior CPU Specialist at Project Leia (which is a pseudo for a very
-          big tech company that rhymes with mapple).
+          companies to learn tech environment, what to expect from what I do and
+          also, how to manage expectations. My longest experience about tech
+          lies as a Senior CPU Specialist at Project Leia (which is a pseudo for
+          a very big tech company that rhymes with mapple).
         </p>
         <p>
           I love building (and occasionally designing) pixel-perfect, beautiful
