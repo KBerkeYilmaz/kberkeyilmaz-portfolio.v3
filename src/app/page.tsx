@@ -108,7 +108,7 @@ const Home: NextPage = async () => {
           interfaces with scalable, fast backends.{" "}
         </p>
       </div>
-      <div className="flex h-full w-full flex-col mt-32 sm:mt-0 lg:w-3/5 lg:px-16 md:py-0">
+      <div className="mt-10 flex h-full w-full flex-col sm:mt-0 md:py-0 lg:w-3/5 lg:pl-16">
         <h2 className="flex items-center gap-2 pb-4 text-3xl">
           My Voyage <Plane size={32} />
         </h2>
