@@ -7,7 +7,15 @@ import { Plane, MoveRight } from "lucide-react";
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
-const voyageItems = [
+
+interface VoyageItem {
+  year: number;
+  itemTitle: string;
+  itemDescription?: string;
+  itemImage?: string;
+}
+
+const voyageItems: VoyageItem[] = [
   {
     year: 2023,
     itemTitle: "I've ended the year with great news, I landed another job!",
@@ -96,6 +104,18 @@ const voyageItems = [
   },
 ];
 
+type GroupedByYear = Record<number, VoyageItem[]>;
+
+const groupedByYear = voyageItems.reduce<GroupedByYear>((acc, item) => {
+  // If the year key does not exist, initialize it with an empty array
+  if (!acc[item.year]) {
+    acc[item.year] = [];
+  }
+  // Push the current item into the appropriate year array
+  acc[item.year]!.push(item);
+  return acc;
+}, {} as GroupedByYear); // Type assertion to match GroupedByYear
+
 const Home: NextPage = async () => {
   // const hello = await api.post.hello({ text: "from tRPC" });
   // const session = await getServerAuthSession();
@@ -142,36 +162,39 @@ const Home: NextPage = async () => {
         </h2>
         <Separator className="mb-4" />
         <ScrollArea className="h-full w-full">
-          <ul className="flex flex-col items-start justify-start gap-20">
-            {voyageItems
-              .sort((a, b) => b.year - a.year)
-              .map((item, index) => {
-                return (
-                  <li
-                    className="flex h-fit min-h-20 w-full items-start justify-start"
-                    key={index}
-                  >
-                    <MoveRight size={20} className="mr-2 min-w-fit" />
-                    <div className="mr-4 text-2xl">{item.year}</div>
-                    <div className="flex h-full flex-col items-baseline">
-                      <h3 className="flex">
-                        {item.itemTitle}
-                        {item.itemImage && (
-                          <Image
-                            src={item.itemImage}
-                            width={20}
-                            height={20}
-                            alt={"item image"}
-                          />
-                        )}
-                      </h3>
-                      <span className="text-sm text-slate-400">
-                        {item.itemDescription}
-                      </span>
+          <ul className="flex flex-col items-start justify-start gap-10">
+            {Object.keys(groupedByYear)
+              .map(Number) // Convert keys to numbers
+              .sort((a, b) => b - a) // Sort years descending
+              .map((year) => (
+                <li key={year} className="flex flex-col">
+                  <h3 className="mb-4 text-xl font-semibold">{year}</h3>
+                  {groupedByYear[year]!.map((item, index) => (
+                    <div
+                      className="mb-4 flex h-fit min-h-20 w-full items-start"
+                      key={index}
+                    >
+                      <MoveRight className="mr-2" />
+                      <div className="flex h-full w-full flex-col items-baseline">
+                        <h4 className="flex">
+                          {item.itemTitle}
+                          {item.itemImage && (
+                            <Image
+                              src={item.itemImage}
+                              width={20}
+                              height={20}
+                              alt="item image"
+                            />
+                          )}
+                        </h4>
+                        <span className="text-sm text-slate-400">
+                          {item.itemDescription}
+                        </span>
+                      </div>
                     </div>
-                  </li>
-                );
-              })}
+                  ))}
+                </li>
+              ))}
           </ul>
         </ScrollArea>
       </div>
