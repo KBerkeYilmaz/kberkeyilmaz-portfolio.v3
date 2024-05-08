@@ -5,6 +5,8 @@ import { Sheet, SheetTrigger } from "@/components/ui/sheet";
 import { ModeToggle } from "@/components/theme-toggle";
 import NavLinksMobile from "@/components/NavLinksMobile";
 import NavLinks from "@/components/NavLinks";
+import { LinkBtnGroup } from "@/components/LinkBtnGroup";
+
 const MainLayout = async ({ children }: { children: React.ReactNode }) => {
   // const hello = await api.post.hello({ text: "from tRPC" });
   // const session = await getServerAuthSession();
@@ -12,7 +14,7 @@ const MainLayout = async ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="flex h-screen w-screen items-center justify-center">
       <div className="flex h-[80vh] max-h-screen w-[90vw] flex-col rounded-xl border-2 p-8 shadow-2xl">
-        <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-4 pb-2 md:px-6">
+        <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-background pb-2">
           <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
             {/* <Link
               href="#"
@@ -59,6 +61,10 @@ const MainLayout = async ({ children }: { children: React.ReactNode }) => {
                   />
                 </div>
               </form> */}
+            <div className="hidden lg:block">
+              <LinkBtnGroup />
+            </div>
+
             <ModeToggle />
           </div>
         </header>

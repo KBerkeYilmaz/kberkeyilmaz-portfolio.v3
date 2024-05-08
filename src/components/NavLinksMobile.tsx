@@ -4,6 +4,7 @@ import clsx from "clsx";
 import { SheetContent, SheetClose } from "@/components/ui/sheet";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Link from "next/link";
+import { LinkBtnGroup } from "./LinkBtnGroup";
 
 const NavLinksMobile = () => {
   const pathname = usePathname();
@@ -21,7 +22,7 @@ const NavLinksMobile = () => {
 
   return (
     <SheetContent side="left">
-      <nav className="grid gap-6 text-lg font-medium">
+      <nav className="grid gap-6 text-lg font-medium relative">
         <div className="flex w-52 gap-2 tracking-tighter">
           <Avatar>
             <AvatarImage src="/profilepic.webp" alt="profile" />
@@ -49,6 +50,9 @@ const NavLinksMobile = () => {
         <Link href="#" className={getLinkClass("/cv")}>
           CV
         </Link>
+        <div className="sitcky bottom-0 mx-auto">
+        <LinkBtnGroup />
+        </div>
       </nav>
     </SheetContent>
   );
