@@ -11,19 +11,20 @@ const voyageItems = [
   {
     year: 2023,
     itemTitle: "I've ended the year with great news, I landed another job!",
-    itemDescription: "",
+    itemDescription:
+      "I've started to work as a fullstack web developer on MedusaGlobal, a media agency. ",
   },
   {
     year: 2024,
-    itemTitle: "Damn, I really wished this was supposed to be it.",
+    itemTitle: "I've founded my own team.",
     itemDescription:
-      "What I learn? Communication and clear expectations with a good project management is the key in this field. It was very difficult to be the sole developer in a very hectic environment like this, but I managed to do things I haven't though it was possible when I started web development two years ago. I am ready for a serious project.",
+      "I feel like I've gained so much experience in these past two years. Time to put my vision to the test. Ready for new horizons and bigger challenges. ",
   },
   {
     year: 2023,
     itemTitle: "First development position in FioresGlobal, here we go!",
     itemDescription:
-      "Work there until project has ended, international team, very good experience. Started to learn React and backend for future purposes.",
+      "International team, very good experience. Started to learn React and backend for future purposes as JQuery and VanillaJS combo felt really old. Worked daily with backend teams, structured the project on Django framework.",
   },
   {
     year: 2023,
@@ -37,7 +38,7 @@ const voyageItems = [
     itemTitle:
       "I started taking introduction to CS classes in İzmir University of Economics. ",
     itemDescription:
-      "Learned Java, Phyton, PHP, JavaScript, Project Management",
+      "Learned Java, Phyton, PHP, JavaScript, Project Management. Course took 6 months, I really liked PHP and Java. Built algorithms on Python, learned different IDE's.",
   },
   {
     year: 2022,
@@ -85,8 +86,8 @@ const voyageItems = [
   {
     year: 2022,
     itemTitle:
-      "AI may take up interpretation and translation jobs, maybe I can switch to development, my lifelong dream. Surely AI can't hurt tech right? ",
-    itemDescription: "Thanks OpenAI and Google",
+      "I thought AI may take up interpretation and translation jobs, maybe I can switch to software development, my lifelong dream. Surely AI can't hurt tech right? Started to work on web development with an Udemy Course by Dr. Angela Yu ",
+    itemDescription: "Famous last words",
   },
   {
     year: 2020,
@@ -135,22 +136,22 @@ const Home: NextPage = async () => {
           interfaces with scalable, fast backends.{" "}
         </p>
       </div>
-      <div className="mt-10 flex h-full w-full flex-col sm:mt-0 md:py-0 lg:w-4/6 lg:pl-16">
+      <div className="mt-10 flex h-full w-full flex-col sm:mt-0 md:py-0 lg:ml-16 lg:w-4/6">
         <h2 className="flex items-center gap-2 pb-4 text-3xl">
           My Journey <Plane size={32} />
         </h2>
         <Separator className="mb-4" />
         <ScrollArea className="h-full w-full">
-          <ul className="flex flex-col gap-20">
+          <ul className="flex flex-col items-start justify-start gap-20">
             {voyageItems
               .sort((a, b) => b.year - a.year)
               .map((item, index) => {
                 return (
                   <li
-                    className="flex h-fit min-h-20 w-full items-start"
+                    className="flex h-fit min-h-20 w-full items-start justify-start"
                     key={index}
                   >
-                    <MoveRight className="mr-2" />
+                    <MoveRight size={20} className="mr-2 min-w-fit" />
                     <div className="mr-4 text-2xl">{item.year}</div>
                     <div className="flex h-full flex-col items-baseline">
                       <h3 className="flex">

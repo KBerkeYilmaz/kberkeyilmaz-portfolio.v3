@@ -13,7 +13,7 @@ const MainLayout = async ({ children }: { children: React.ReactNode }) => {
 
   return (
     <div className="flex h-screen w-screen items-center justify-center">
-      <div className="flex h-[90vh] max-h-screen w-[90vw] flex-col rounded-xl border-2 p-8 shadow-2xl">
+      <div className="flex h-[90vh] max-h-screen w-[90vw] flex-col rounded-xl border-2 p-8 shadow-2xl dark:shadow-slate-900">
         <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-background pb-2">
           <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
             {/* <Link
