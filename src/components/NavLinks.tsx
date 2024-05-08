@@ -11,7 +11,7 @@ const NavLinks = () => {
   };
 
   const getLinkClass = (path: string) => {
-    return clsx("transition-colors hover:text-foreground", {
+    return clsx("transition-colors hover:text-foreground tracking-wider", {
       "text-foreground": isActive(path),
       "text-muted-foreground": !isActive(path),
     });
