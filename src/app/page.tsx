@@ -20,13 +20,19 @@ const voyageItems: VoyageItem[] = [
     year: 2023,
     itemTitle: "I've ended the year with great news, I landed another job!",
     itemDescription:
-      "I've started to work as a fullstack web developer on MedusaGlobal, a media agency. ",
+      "I've started to work as a fullstack web developer on MedusaGlobal, a media agency. Meet lots of professionals, made contacts with designers, embed software developers and backend cybersecurity developers.  I feel like I started to outgrow my tenure as a 'junior'. ",
   },
   {
     year: 2024,
     itemTitle: "I've founded my own team.",
     itemDescription:
-      "I feel like I've gained so much experience in these past two years. Time to put my vision to the test. Ready for new horizons and bigger challenges. ",
+      "I feel like I've gained so much experience in these past two years. Time to put my vision to the test. Ready for new horizons and bigger challenges. We're only got two active members now, but that's a start. ",
+  },
+  {
+    year: 2020,
+    itemTitle: "Started to work as a full time interpreter.",
+    itemDescription:
+      "Translated lots of academic articles, worked with an insulation manufacturer as an interpreter/consultant on foreign sales, started to work as an interpreter for Ithaki Publishing.",
   },
   {
     year: 2023,
@@ -55,14 +61,17 @@ const voyageItems: VoyageItem[] = [
       "Learned basic MVC design patterns, how to work with databases (MySQL), how to manage a product and develop UI",
   },
   {
+    year: 2021,
+    itemTitle: "This time switched up a bit, I got my first dog, Nami",
+    itemDescription: "Okay, this is getting out of hand.",
+  },
+  {
     year: 1991,
     itemTitle: "Year I was born",
-    itemDescription: "this is optional",
   },
   {
     year: 2011,
     itemTitle: "Year I got into university",
-    itemDescription: "this also is optional",
   },
   {
     year: 2019,
@@ -83,13 +92,11 @@ const voyageItems: VoyageItem[] = [
   {
     year: 2018,
     itemTitle: `We got our second cat, Luffy`,
-    itemDescription: "this is optional",
     itemImage: "/svg/strawhat.svg",
   },
   {
     year: 2017,
     itemTitle: "We got our first cat, Luna 🌑",
-    itemDescription: "this also is optional",
   },
   {
     year: 2022,
@@ -145,15 +152,19 @@ const Home: NextPage = async () => {
         </p>
         <p className="text-sm tracking-wider">
           {" "}
-          I&apos;ve worked on volunteer projects, media agencies and database
-          companies to learn tech environment, what to expect from what I do and
-          also, how to manage expectations. My longest experience about tech
-          lies as a Senior CPU Specialist at Project Leia (which is a pseudo for
-          a very big tech company that rhymes with maple).
+          As I&apos;m not an engineering graduate, I&apos;ve worked on volunteer
+          projects, media agencies and database companies to learn tech
+          environment, what to expect from what I do and what is expected from a
+          software developer. My longest experience about tech lies as a Senior
+          CPU Specialist at Project Leia (which is a pseudo for a very big tech
+          company that rhymes with maple).
         </p>
         <p className="text-sm tracking-wider">
           I love building (and occasionally designing) pixel-perfect, beautiful
           interfaces with scalable, fast backends.{" "}
+        </p>
+        <p className="text-sm tracking-wider">
+          If interested, feel free to say hi!
         </p>
       </div>
       <div className="mt-10 flex h-full w-full flex-col sm:mt-0 md:py-0 lg:ml-16 lg:w-4/6">
@@ -167,8 +178,8 @@ const Home: NextPage = async () => {
               .map(Number) // Convert keys to numbers
               .sort((a, b) => b - a) // Sort years descending
               .map((year) => (
-                <li key={year} className="flex flex-col">
-                  <h3 className="mb-4 text-xl font-semibold">{year}</h3>
+                <li key={year} className="flex w-full flex-col">
+                  <h3 className="mb-4 text-2xl font-semibold">{year}</h3>
                   {groupedByYear[year]!.map((item, index) => (
                     <div
                       className="mb-4 flex h-fit min-h-20 w-full items-start"
@@ -187,7 +198,7 @@ const Home: NextPage = async () => {
                             />
                           )}
                         </h4>
-                        <span className="text-sm text-slate-400">
+                        <span className="text-sm tracking-wide text-slate-500">
                           {item.itemDescription}
                         </span>
                       </div>
