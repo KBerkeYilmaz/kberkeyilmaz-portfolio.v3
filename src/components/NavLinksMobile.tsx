@@ -22,7 +22,7 @@ const NavLinksMobile = () => {
 
   return (
     <SheetContent side="left">
-      <nav className="grid gap-6 text-lg font-medium relative">
+      <nav className="relative grid gap-6 text-lg font-medium">
         <div className="flex w-52 gap-2 tracking-tighter">
           <Avatar>
             <AvatarImage src="/profilepic.webp" alt="profile" />
@@ -38,7 +38,7 @@ const NavLinksMobile = () => {
         <Link href="/" className={getLinkClass("/")}>
           <SheetClose> Home</SheetClose>
         </Link>
-        <Link href="/about" className={getLinkClass("/about")}>
+        {/* <Link href="/about" className={getLinkClass("/about")}>
           <SheetClose>About</SheetClose>
         </Link>
         <Link href="/works" className={getLinkClass("/works")}>
@@ -49,9 +49,9 @@ const NavLinksMobile = () => {
         </Link>
         <Link href="#" className={getLinkClass("/cv")}>
           CV
-        </Link>
-        <div className="sitcky bottom-0 mx-auto">
-        <LinkBtnGroup />
+        </Link> */}
+        <div className="sticky bottom-0 mx-auto">
+          <LinkBtnGroup />
         </div>
       </nav>
     </SheetContent>

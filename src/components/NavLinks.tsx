@@ -22,7 +22,7 @@ const NavLinks = () => {
       <Link key="home" href="/" className={getLinkClass("/")}>
         Home
       </Link>
-      <Link key="about" href="/about" className={getLinkClass("/about")}>
+      {/* <Link key="about" href="/about" className={getLinkClass("/about")}>
         About
       </Link>
       <Link key="works" href="/works" className={getLinkClass("/works")}>
@@ -33,7 +33,7 @@ const NavLinks = () => {
       </Link>
       <Link key="cv" href="/cv" className={getLinkClass("/cv")}>
         CV
-      </Link>
+      </Link> */}
     </>
   );
 };
