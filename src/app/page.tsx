@@ -20,7 +20,7 @@ const voyageItems: VoyageItem[] = [
     year: 2023,
     itemTitle: "I've ended the year with great news, I landed another job!",
     itemDescription:
-      "I've started to work as a fullstack web developer on MedusaGlobal, a media agency. Meet lots of professionals, made contacts with designers, embed software developers and backend cybersecurity developers.  I feel like I started to outgrow my tenure as a 'junior'. ",
+      "I've started to work as a fullstack web developer on MedusaGlobal, a media agency. Met lots of professionals, made contacts with designers, embed software developers and backend cybersecurity developers.  I feel like I started to outgrow my tenure as a 'junior'. ",
   },
   {
     year: 2024,
