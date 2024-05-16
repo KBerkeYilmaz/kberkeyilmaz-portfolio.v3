@@ -15,6 +15,8 @@ interface VoyageItem {
   itemImage?: string;
 }
 
+
+
 const voyageItems: VoyageItem[] = [
   {
     year: 2023,
@@ -152,12 +154,10 @@ const Home: NextPage = async () => {
         </p>
         <p className="text-sm tracking-wider">
           {" "}
-          As I&apos;m not an engineering graduate, I&apos;ve worked on volunteer
-          projects, media agencies and database companies to learn tech
-          environment, what to expect from what I do and what is expected from a
-          software developer. My longest experience about tech lies as a Senior
-          CPU Specialist at Project Leia (which is a pseudo for a very big tech
-          company that rhymes with maple).
+          I&apos;ve worked on volunteer projects, with media agencies, and at
+          database companies to learn about the tech world and what’s expected
+          of a software developer. My longest experience was as a Senior CPU
+          Specialist at Project Leia major tech company (that rhymes with &apos;maple&apos;).
         </p>
         <p className="text-sm tracking-wider">
           I love building (and occasionally designing) pixel-perfect, beautiful

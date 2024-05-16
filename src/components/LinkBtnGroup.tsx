@@ -1,9 +1,19 @@
-import { LucideLinkedin, LucideGithub, CircleHelp } from "lucide-react";
+import { LucideLinkedin, LucideGithub, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 export function LinkBtnGroup() {
   return (
     <div className="flex gap-2">
+      <Button variant="outline" size="icon" asChild>
+        <a
+          href="mailto:kberkeyilmaz@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Mail className="h-4 w-4" />
+        </a>
+      </Button>
+
       <Button variant="outline" size="icon" asChild>
         <a
           href={"https://www.linkedin.com/in/kutalmis-berke-yilmaz/"}

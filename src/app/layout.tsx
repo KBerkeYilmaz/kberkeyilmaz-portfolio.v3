@@ -1,10 +1,11 @@
 import "@/styles/globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Inter, Poppins } from "next/font/google";
+import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 import { TRPCReactProvider } from "@/trpc/react";
 import MainLayout from "./_components/main-layout";
 import type { AppProps } from "next/app";
+import { Toaster } from "@/components/ui/toaster";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -36,6 +37,7 @@ export default function RootLayout({
           <TRPCReactProvider>
             <MainLayout {...pageProps}>{children}</MainLayout>
           </TRPCReactProvider>
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>
