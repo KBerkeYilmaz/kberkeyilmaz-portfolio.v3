@@ -4,8 +4,6 @@ import bcrypt from "bcrypt";
 import { ZodError } from "zod";
 import Credentials from "next-auth/providers/credentials";
 import { signInSchema } from "@/lib/schemas/signInSchema";
-// Your own logic for dealing with plaintext password strings; be careful!
-import { saltAndHashPassword, getUserFromDb } from "@/lib/utils/signIn";
 import { db } from "./db/schema";
 import { allUsers } from "./db";
 class InvalidLoginError extends CredentialsSignin {
@@ -14,7 +12,7 @@ class InvalidLoginError extends CredentialsSignin {
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   adapter: DrizzleAdapter(db),
-  session: { strategy: "jwt", maxAge: 24 * 60 * 60 },
+  session: { strategy: "jwt", maxAge: 3 * 60 * 60 },
   secret: process.env.AUTH_SECRET,
   basePath: "/api/auth",
   providers: [
@@ -36,9 +34,9 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
             throw new InvalidLoginError();
           }
 
-          
 
 
+          console.log("user", user); 
           return user
             ? { id: user.id, name: user.name, email: user.email }
             : null;
@@ -50,6 +48,26 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           throw error;
         }
       },
+      
     }),
   ],
+  callbacks: {
+    async jwt({ token, user }) {
+      // if (trigger === "update" && session?.name) {
+      if (user) {
+        token.id = user.id; // Correctly access the nested 'id'
+        token.email = user.email; // Example of adding more user details to the token
+        token.name = user.name; // Example of adding more user details to the token
+      }
+      return token;
+    },
+    async session({ session, token}) {
+      // Use the token to set custom session values or modify the session object
+      session.user.id = token.id;
+      session.user.email = token.email; // Add email to session
+      session.user.name = token.name; // Add name to session
+      return session;
+    },
+  },
+
 });
