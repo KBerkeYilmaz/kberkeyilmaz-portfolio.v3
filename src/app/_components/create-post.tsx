@@ -2,17 +2,18 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-
 import { api } from "@/trpc/react";
 
 export function CreatePost() {
   const router = useRouter();
   const [name, setName] = useState("");
+  const [year, setYear] = useState("");
 
   const createPost = api.post.create.useMutation({
     onSuccess: () => {
       router.refresh();
       setName("");
+      setYear("");
     },
   });
 
@@ -20,15 +21,23 @@ export function CreatePost() {
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        createPost.mutate({ name });
+        // Ensure year is converted to a number
+        createPost.mutate({ title: name, year: parseInt(year, 10) });
       }}
-      className="flex flex-col gap-2"
+      className="flex w-1/3 flex-col gap-2"
     >
       <input
         type="text"
         placeholder="Title"
         value={name}
         onChange={(e) => setName(e.target.value)}
+        className="w-full rounded-full px-4 py-2 text-black"
+      />
+      <input
+        type="number"
+        placeholder="Year"
+        value={year}
+        onChange={(e) => setYear(e.target.value)}
         className="w-full rounded-full px-4 py-2 text-black"
       />
       <button

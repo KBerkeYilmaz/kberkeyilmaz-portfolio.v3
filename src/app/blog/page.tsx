@@ -1,9 +1,16 @@
-
-import type { NextPage } from "next";
-
+import { type NextPage } from "next";
+import { auth } from "@/server/auth";
 
 const About: NextPage = async () => {
-  return <h1 className="animate-fadeIn">This is Blog</h1>;
+  const session = await auth();
+  console.log(session);
+
+  return (
+      <div>
+        <h1>Session Info</h1>
+        <pre>{JSON.stringify(session, null, 2)}</pre>
+      </div>
+  );
 };
 
 export default About;

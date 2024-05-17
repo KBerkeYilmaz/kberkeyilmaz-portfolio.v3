@@ -1,12 +1,13 @@
-import { type Config } from "drizzle-kit";
-
+import { defineConfig } from "drizzle-kit";
 import { env } from "@/env";
 
-export default {
+export default defineConfig({
   schema: "./src/server/db/schema.ts",
-  driver: "pg",
+  out: "./src/drizzle/migrations",
+  dialect: "postgresql",
   dbCredentials: {
-    connectionString: env.DATABASE_URL,
+    url: env.DATABASE_URL,
   },
+  verbose: true,
   tablesFilter: ["kberkeyilmaz-portfolio.v3_*"],
-} satisfies Config;
+}) 
