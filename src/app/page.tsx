@@ -88,7 +88,7 @@ const voyageItems: JourneyItem[] = [
   {
     year: 2018,
     title: `We got our second cat, Luffy`,
-    itemImage: "/svg/strawhat.svg",
+    image: "/svg/strawhat.svg",
   },
   {
     year: 2017,
