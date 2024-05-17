@@ -9,110 +9,105 @@ import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 import { Suspense } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
-interface VoyageItem {
-  year: number;
-  itemTitle: string;
-  itemDescription?: string;
-  itemImage?: string;
-}
+import { type JourneyItem } from "@/lib/types/journeyItem";
 
-const voyageItems: VoyageItem[] = [
+const voyageItems: JourneyItem[] = [
   {
     year: 2023,
-    itemTitle: "I've ended the year with great news, I landed another job!",
-    itemDescription:
+    title: "I've ended the year with great news, I landed another job!",
+    description:
       "I've started to work as a fullstack web developer on MedusaGlobal, a media agency. Met lots of professionals, made contacts with designers, embed software developers and backend cybersecurity developers.  I feel like I started to outgrow my tenure as a 'junior'. ",
   },
   {
     year: 2024,
-    itemTitle: "I've founded my own team.",
-    itemDescription:
+    title: "I've founded my own team.",
+    description:
       "I feel like I've gained so much experience in these past two years. Time to put my vision to the test. Ready for new horizons and bigger challenges. We're only got two active members now, but that's a start. ",
   },
   {
     year: 2020,
-    itemTitle: "Started to work as a full time interpreter.",
-    itemDescription:
+    title: "Started to work as a full time interpreter.",
+    description:
       "Translated lots of academic articles, worked with an insulation manufacturer as an interpreter/consultant on foreign sales, started to work as an interpreter for Ithaki Publishing.",
   },
   {
     year: 2023,
-    itemTitle: "First development position in FioresGlobal, here we go!",
-    itemDescription:
+    title: "First development position in FioresGlobal, here we go!",
+    description:
       "International team, very good experience. Started to learn React and backend for future purposes as JQuery and VanillaJS combo felt really old. Worked daily with backend teams, structured the project on Django framework.",
   },
   {
     year: 2023,
-    itemTitle:
+    title:
       "Developed my very first basic PHP backend framework with MVC pattern suitable for e-commerce. ",
-    itemDescription:
+    description:
       "Decoupled architecture with React FE acts as a view component. Deployed backend on shared hosting, learned how to use Vercel for frontend.",
   },
   {
     year: 2022,
-    itemTitle:
+    title:
       "I started taking introduction to CS classes in İzmir University of Economics. ",
-    itemDescription:
+    description:
       "Learned Java, Phyton, PHP, JavaScript, Project Management. Course took 6 months, I really liked PHP and Java. Built algorithms on Python, learned different IDE's.",
   },
   {
     year: 2022,
-    itemTitle: "Returned to tech as a database admin",
-    itemDescription:
+    title: "Returned to tech as a database admin",
+    description:
       "Learned basic MVC design patterns, how to work with databases (MySQL), how to manage a product and develop UI",
   },
   {
     year: 2021,
-    itemTitle: "This time switched up a bit, I got my first dog, Nami",
-    itemDescription: "Okay, this is getting out of hand.",
+    title: "This time switched up a bit, I got my first dog, Nami",
+    description: "Okay, this is getting out of hand.",
   },
   {
     year: 1991,
-    itemTitle: "Year I was born",
+    title: "Year I was born",
   },
   {
     year: 2011,
-    itemTitle: "Year I got into university",
+    title: "Year I got into university",
   },
   {
     year: 2019,
-    itemTitle: "My second promotion, I've become a Senior CPU specialist",
-    itemDescription:
+    title: "My second promotion, I've become a Senior CPU specialist",
+    description:
       "Lots of good memories here, learned a lot and grow as a person.",
   },
   {
     year: 2018,
-    itemTitle: "My first promotion, switched to mobile from CPU department",
-    itemDescription: "",
+    title: "My first promotion, switched to mobile from CPU department",
+    description: "",
   },
   {
     year: 2018,
-    itemTitle: "I got into tech for a very big company as a specialist.",
-    itemDescription: "I wonder if NDA is still valid or not",
+    title: "I got into tech for a very big company as a specialist.",
+    description: "I wonder if NDA is still valid or not",
   },
   {
     year: 2018,
-    itemTitle: `We got our second cat, Luffy`,
+    title: `We got our second cat, Luffy`,
     itemImage: "/svg/strawhat.svg",
   },
   {
     year: 2017,
-    itemTitle: "We got our first cat, Luna 🌑",
+    title: "We got our first cat, Luna 🌑",
   },
   {
     year: 2022,
-    itemTitle:
+    title:
       "I thought AI may take up interpretation and translation jobs, maybe I can switch to software development, my lifelong dream. Surely AI can't hurt tech right? Started to work on web development with an Udemy Course by Dr. Angela Yu ",
-    itemDescription: "Famous last words",
+    description: "Famous last words",
   },
   {
     year: 2020,
-    itemTitle: "I got married, wohoo ❤️",
-    itemDescription: "",
+    title: "I got married, wohoo ❤️",
+    description: "",
   },
 ];
 
-type GroupedByYear = Record<number, VoyageItem[]>;
+type GroupedByYear = Record<number, JourneyItem[]>;
 
 const groupedByYear = voyageItems.reduce<GroupedByYear>((acc, item) => {
   // If the year key does not exist, initialize it with an empty array
@@ -189,10 +184,10 @@ const Home: NextPage = async () => {
                         <MoveRight className="mr-2" />
                         <div className="flex h-full w-full flex-col items-baseline">
                           <h4 className="flex">
-                            {item.itemTitle}
-                            {item.itemImage && (
+                            {item.title}
+                            {item.image && (
                               <Image
-                                src={item.itemImage}
+                                src={item.image}
                                 width={20}
                                 height={20}
                                 alt="item image"
@@ -200,7 +195,7 @@ const Home: NextPage = async () => {
                             )}
                           </h4>
                           <span className="text-sm tracking-wide text-slate-500">
-                            {item.itemDescription}
+                            {item.description}
                           </span>
                         </div>
                       </div>

@@ -12,7 +12,7 @@ import {
   Users,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { SignOut } from "@/components/SignOut";
+import { SignOutButton } from "@/components/SignOut";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -90,7 +90,7 @@ export default function DashboardLayout({
             </nav>
           </div>
           <div className="mt-auto p-4">
-            <SignOut />
+            <SignOutButton />
           </div>
         </div>
       </div>
@@ -160,9 +160,7 @@ export default function DashboardLayout({
                 </Link>
               </nav>
               <div className="mt-auto">
-                <Button size="sm" className="w-full">
-                  Sign Out
-                </Button>
+                <SignOutButton />
               </div>
             </SheetContent>
           </Sheet>

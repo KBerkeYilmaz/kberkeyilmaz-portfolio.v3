@@ -27,24 +27,36 @@ const pool = postgres(connectionString, { max: 1 });
 
 export const db = drizzle(pool);
 
-export const posts = pgTable(
-  "post",
-  {
-    id: uuid("id").primaryKey().defaultRandom(),
-    name: varchar("name", { length: 256 }).notNull(),
-    createdById: varchar("createdById", { length: 255 })
-      .notNull()
-      .references(() => users.id),
-    createdAt: timestamp("created_at")
-      .default(sql`CURRENT_TIMESTAMP`)
-      .notNull(),
-    updatedAt: timestamp("updatedAt"),
-  },
-  (example) => ({
-    createdByIdIdx: index("createdById_idx").on(example.createdById),
-    nameIndex: index("name_idx").on(example.name),
-  }),
-);
+export const posts = pgTable("post", {
+  id: uuid("id").primaryKey().defaultRandom(),
+  title: varchar("name", { length: 256 }).notNull(),
+  description: varchar("description", { length: 256 }),
+  image: varchar("image", { length: 256 }),
+  links: varchar("links", { length: 256 }),
+  year: integer("year").notNull(),
+  createdById: varchar("createdById", { length: 255 })
+    .notNull()
+    .references(() => users.id),
+  createdAt: timestamp("created_at")
+    .default(sql`CURRENT_TIMESTAMP`)
+    .notNull(),
+  updatedAt: timestamp("updatedAt"),
+});
+export const works = pgTable("work", {
+  id: uuid("id").primaryKey().defaultRandom(),
+  title: varchar("name", { length: 256 }).notNull(),
+  description: varchar("description", { length: 256 }).notNull(),
+  image: varchar("image", { length: 256 }),
+  links: varchar("links", { length: 256 }),
+  stack: varchar("stack", { length: 256 }),
+  createdById: varchar("createdById", { length: 255 })
+    .notNull()
+    .references(() => users.id),
+  createdAt: timestamp("created_at")
+    .default(sql`CURRENT_TIMESTAMP`)
+    .notNull(),
+  updatedAt: timestamp("updatedAt"),
+});
 
 export const users = pgTable("user", {
   id: text("id")
@@ -52,7 +64,7 @@ export const users = pgTable("user", {
     .$defaultFn(() => crypto.randomUUID()),
   name: text("name"),
   email: text("email").notNull(),
-  password:varchar("password", { length: 255 }).notNull(),
+  password: varchar("password", { length: 255 }).notNull(),
   emailVerified: timestamp("emailVerified", { mode: "date" }),
   image: text("image"),
 });
@@ -118,4 +130,3 @@ export type SelectUser = typeof users.$inferSelect;
 
 export type InsertPost = typeof posts.$inferInsert;
 export type SelectPost = typeof posts.$inferSelect;
-
