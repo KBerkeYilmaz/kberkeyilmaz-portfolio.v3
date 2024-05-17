@@ -20,7 +20,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       // You can specify which fields should be submitted, by adding keys to the `credentials` object.
       // e.g. domain, username, password, 2FA token, etc.
       credentials: {
-        email: { label: "Bura Email", type: "email" },
+        email: { label: "Email", type: "email" },
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials): Promise<User | null> {
@@ -55,17 +55,17 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     async jwt({ token, user }) {
       // if (trigger === "update" && session?.name) {
       if (user) {
-        token.id = user.id; // Correctly access the nested 'id'
-        token.email = user.email; // Example of adding more user details to the token
-        token.name = user.name; // Example of adding more user details to the token
+        token.id = user.id!; // Correctly access the nested 'id'
+        token.email = user.email!; // Example of adding more user details to the token
+        token.name = user.name!; // Example of adding more user details to the token
       }
       return token;
     },
     async session({ session, token}) {
       // Use the token to set custom session values or modify the session object
-      session.user.id = token.id;
-      session.user.email = token.email; // Add email to session
-      session.user.name = token.name; // Add name to session
+      session.user.id = token.id as string;
+      session.user.email = token.email!;
+      session.user.name = token.name!;
       return session;
     },
   },

@@ -3,7 +3,7 @@ import { type DefaultJWT } from "@auth/core/jwt";
 
 declare module "next-auth" {
   // Extend session to hold the access_token
-  interface Session {
+  interface Session extends DefaultSession{
     user: {
       id: string;
       name: string;
@@ -12,7 +12,7 @@ declare module "next-auth" {
   }
 
   // Extend token to hold the access_token before it gets put into session
-  interface JWT {
+  interface JWT extends DefaultJWT {
     id: string;
     name: string;
     email: string;
