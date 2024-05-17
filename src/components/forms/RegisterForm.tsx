@@ -19,16 +19,15 @@ type RegisterInput = inferProcedureInput<AppRouter["user"]["register"]>;
 
 const RegisterForm = () => {
   const { toast } = useToast();
-  const form = useForm();
+  const form = useForm<RegisterInput>({
+    resolver: zodResolver(registerSchema),
+  });
 
   const {
     register,
-    handleSubmit,
     formState: { errors },
     reset,
-  } = useForm<RegisterInput>({
-    resolver: zodResolver(registerSchema),
-  });
+  } = form;
 
   const mutation = api.user.register.useMutation();
 
@@ -52,8 +51,11 @@ const RegisterForm = () => {
   };
 
   return (
-    <Form {...form} >
-      <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-4 w-1/3 text-lg" >
+    <Form {...form}>
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="flex w-1/3 flex-col gap-4 text-lg"
+      >
         <FormField
           control={form.control}
           name="name"
