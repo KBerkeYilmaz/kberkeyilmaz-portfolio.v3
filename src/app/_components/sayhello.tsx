@@ -2,7 +2,7 @@
 import { api } from "@/trpc/react";
 
 const Hello = ({ hello }: { hello: string }) => {
-  const { data, error, isLoading } = api.post.hello.useQuery({
+  const { data, error, isLoading } = api.test.hello.useQuery({
     text: `${hello}`,
   });
 
