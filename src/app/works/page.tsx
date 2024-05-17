@@ -4,11 +4,11 @@ import RegisterForm from "@/components/forms/RegisterForm";
 
 const About: NextPage = async () => {
   return (
-    <div className="animate-fadeIn w-full h-full flex justify-center flex-col items-center">
+    <div className="flex h-full w-full animate-fadeIn flex-col items-center justify-center">
       <h1>Works</h1>
       <RegisterForm />
     </div>
-  )
+  );
 };
 
 export default About;

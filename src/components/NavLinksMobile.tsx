@@ -5,8 +5,10 @@ import { SheetContent, SheetClose } from "@/components/ui/sheet";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Link from "next/link";
 import { LinkBtnGroup } from "./LinkBtnGroup";
+import { useSession } from "next-auth/react";
 
 const NavLinksMobile = () => {
+  const session = useSession();
   const pathname = usePathname();
   const isActive = (path: string) => {
     // Check if the path is the current route
@@ -50,6 +52,15 @@ const NavLinksMobile = () => {
         <Link href="#" className={getLinkClass("/cv")}>
           CV
         </Link>
+        {!session === null ? (
+          <Link
+            key="dashboard"
+            href="/dashboard"
+            className={getLinkClass("/dashboard")}
+          >
+            Dashboard
+          </Link>
+        ) : null}
         <div className="sticky bottom-0 mx-auto">
           <LinkBtnGroup />
         </div>

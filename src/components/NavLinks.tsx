@@ -2,8 +2,10 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
+import { useSession } from "next-auth/react";
 
 const NavLinks = () => {
+  const { data: session, status } = useSession();
   const pathname = usePathname();
   const isActive = (path: string) => {
     // Check if the path is the current route
@@ -34,6 +36,15 @@ const NavLinks = () => {
       <Link key="cv" href="/cv" className={getLinkClass("/cv")}>
         CV
       </Link>
+      {status === "authenticated" && (
+        <Link
+          key="dashboard"
+          href="/dashboard"
+          className={getLinkClass("/dashboard")}
+        >
+          Dashboard
+        </Link>
+      )}
     </>
   );
 };

@@ -6,6 +6,7 @@ import { TRPCReactProvider } from "@/trpc/react";
 import MainLayout from "./_components/main-layout";
 import type { AppProps } from "next/app";
 import { Toaster } from "@/components/ui/toaster";
+import SessionProvider from "@/components/SessionProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -27,7 +28,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`font-sans ${inter.variable}`}>
+      <body className={`font-sans ${inter.variable} transition-colors delay-100`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -35,7 +36,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <TRPCReactProvider>
+            <SessionProvider>
             <MainLayout {...pageProps}>{children}</MainLayout>
+            </SessionProvider>
           </TRPCReactProvider>
           <Toaster />
         </ThemeProvider>

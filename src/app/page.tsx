@@ -7,15 +7,14 @@ import { Plane, MoveRight } from "lucide-react";
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
-
+import { Suspense } from "react";
+import { Skeleton } from "@/components/ui/skeleton";
 interface VoyageItem {
   year: number;
   itemTitle: string;
   itemDescription?: string;
   itemImage?: string;
 }
-
-
 
 const voyageItems: VoyageItem[] = [
   {
@@ -157,7 +156,8 @@ const Home: NextPage = async () => {
           I&apos;ve worked on volunteer projects, with media agencies, and at
           database companies to learn about the tech world and what’s expected
           of a software developer. My longest experience was as a Senior CPU
-          Specialist at Project Leia major tech company (that rhymes with &apos;maple&apos;).
+          Specialist at Project Leia major tech company (that rhymes with
+          &apos;maple&apos;).
         </p>
         <p className="text-sm tracking-wider">
           I love building (and occasionally designing) pixel-perfect, beautiful
@@ -173,40 +173,42 @@ const Home: NextPage = async () => {
         </h2>
         <Separator className="mb-4" />
         <ScrollArea className="h-full w-full">
-          <ul className="flex flex-col items-start justify-start gap-10">
-            {Object.keys(groupedByYear)
-              .map(Number) // Convert keys to numbers
-              .sort((a, b) => b - a) // Sort years descending
-              .map((year) => (
-                <li key={year} className="flex w-full flex-col">
-                  <h3 className="mb-4 text-2xl font-semibold">{year}</h3>
-                  {groupedByYear[year]!.map((item, index) => (
-                    <div
-                      className="mb-4 flex h-fit min-h-20 w-full items-start"
-                      key={index}
-                    >
-                      <MoveRight className="mr-2" />
-                      <div className="flex h-full w-full flex-col items-baseline">
-                        <h4 className="flex">
-                          {item.itemTitle}
-                          {item.itemImage && (
-                            <Image
-                              src={item.itemImage}
-                              width={20}
-                              height={20}
-                              alt="item image"
-                            />
-                          )}
-                        </h4>
-                        <span className="text-sm tracking-wide text-slate-500">
-                          {item.itemDescription}
-                        </span>
+          <Suspense fallback={<Skeleton />}>
+            <ul className="flex flex-col items-start justify-start gap-10">
+              {Object.keys(groupedByYear)
+                .map(Number) // Convert keys to numbers
+                .sort((a, b) => b - a) // Sort years descending
+                .map((year) => (
+                  <li key={year} className="flex w-full flex-col">
+                    <h3 className="mb-4 text-2xl font-semibold">{year}</h3>
+                    {groupedByYear[year]!.map((item, index) => (
+                      <div
+                        className="mb-4 flex h-fit min-h-20 w-full items-start"
+                        key={index}
+                      >
+                        <MoveRight className="mr-2" />
+                        <div className="flex h-full w-full flex-col items-baseline">
+                          <h4 className="flex">
+                            {item.itemTitle}
+                            {item.itemImage && (
+                              <Image
+                                src={item.itemImage}
+                                width={20}
+                                height={20}
+                                alt="item image"
+                              />
+                            )}
+                          </h4>
+                          <span className="text-sm tracking-wide text-slate-500">
+                            {item.itemDescription}
+                          </span>
+                        </div>
                       </div>
-                    </div>
-                  ))}
-                </li>
-              ))}
-          </ul>
+                    ))}
+                  </li>
+                ))}
+            </ul>
+          </Suspense>
         </ScrollArea>
       </div>
     </div>

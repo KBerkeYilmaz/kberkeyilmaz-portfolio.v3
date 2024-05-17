@@ -9,9 +9,9 @@ const About: NextPage = async () => {
   // if (error) return <div>Error: {error.message}</div>;
 
   return (
-    <main className="w-full h-full flex justify-center items-center">
+    <div className="w-full h-full flex justify-center items-center">
       <CreatePost />
-    </main>
+    </div>
   );
 };
 
