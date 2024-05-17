@@ -42,6 +42,7 @@ export const posts = pgTable("post", {
     .notNull(),
   updatedAt: timestamp("updatedAt"),
 });
+
 export const works = pgTable("work", {
   id: uuid("id").primaryKey().defaultRandom(),
   title: varchar("name", { length: 256 }).notNull(),
