@@ -169,7 +169,7 @@ const Home: NextPage = async () => {
   return (
     <div className="flex h-full animate-fadeIn flex-col gap-20 overflow-scroll sm:gap-8 lg:flex-row lg:gap-0">
       <div className="flex h-full flex-col gap-4 lg:w-2/6">
-        <h1 className="text-2xl md:text-4xl">Hi, I&apos;m Berke 👋</h1>
+        <h1 className="text-2xl md:text-4xl font-semibold">Hi, I&apos;m Berke 👋</h1>
         <p className="text-sm tracking-wider">
           I&apos;m a software developer who loves coding, litterature, movies,
           music and gaming.
