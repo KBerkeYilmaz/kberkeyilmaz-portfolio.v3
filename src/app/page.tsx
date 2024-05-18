@@ -105,6 +105,49 @@ const voyageItems: JourneyItem[] = [
     title: "I got married, wohoo ❤️",
     description: "",
   },
+  {
+    year: 2022,
+    title: "I've started to on responsive web design, CSS, HTML, JS.",
+    description:
+      "I've built my first portfolio website. Followed the course content, I've learned how to use Git and Github.",
+  },
+  {
+    year: 2022,
+    title: "Learned grid and flex",
+    description:
+      "Flexbox is something else. HTML and CSS were really fun, but Javascript nearly broked me.",
+  },
+  {
+    year: 2022,
+    title: "Changed to a new course by Colt Steel",
+    description:
+      "Understood the Javascript a little more. Course content included the whole MERN stack, but I was still to green, didn't understand much.",
+  },
+  {
+    year: 2023,
+    title:
+      "Working with an active database company with thousands of daily traffic really helped me.",
+    description:
+      "Combined with the my new CS knowledge, I've started to understand more and more.",
+  },
+  {
+    year: 2023,
+    title: "Learning React changed everything",
+    description:
+      "I finally understood the concepts like REST, SOAP, API, JSON, AJAX, and of course how to use them. I've started to grasp how to scale, and build a web application.",
+  },
+  {
+    year: 2024,
+    title: "New Year new stack, hello T3",
+    description:
+      "I've decided to update my portfolio as my second attempt was cut short by my new job. I've implemented a new auth to the current T3 stack and learned how to use Drizzle, Supabase and PostgreSQL. Best thing was tRCP tho, made a really big difference running queries and making API calls.",
+  },
+  {
+    year: 2023,
+    title: "Next.Js is life, Next.js is love",
+    description:
+      "While learning React, I've heard about server components, server side rendering and SEO's of course. Naturally, I've stumbled upon Next.js, and it was love at first sight. I've started to learn Next.js and how to use it with React.",
+  },
 ];
 
 type GroupedByYear = Record<number, JourneyItem[]>;

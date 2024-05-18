@@ -29,7 +29,7 @@ const NavLinks = () => {
       </Link>
       <Link key="cv" href="/cv" className={getLinkClass("/cv")}>
         CV
-      </Link>
+      </Link> */}
       {status === "authenticated" && (
         <Link
           key="dashboard"
