@@ -45,7 +45,7 @@ const NavLinksMobile = () => {
         </Link>
         <Link href="#" className={getLinkClass("/cv")}>
           CV
-        </Link> */}
+        </Link> 
         {!session === null ? (
           <Link
             key="dashboard"
