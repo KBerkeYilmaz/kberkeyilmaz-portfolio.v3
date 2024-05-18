@@ -40,7 +40,7 @@ const NavLinksMobile = () => {
         <Link href="/" className={getLinkClass("/")}>
           <SheetClose> Home</SheetClose>
         </Link>
-        <Link href="/about" className={getLinkClass("/about")}>
+        {/* <Link href="/about" className={getLinkClass("/about")}>
           <SheetClose>About</SheetClose>
         </Link>
         <Link href="/works" className={getLinkClass("/works")}>
@@ -51,7 +51,7 @@ const NavLinksMobile = () => {
         </Link>
         <Link href="#" className={getLinkClass("/cv")}>
           CV
-        </Link>
+        </Link> */}
         {!session === null ? (
           <Link
             key="dashboard"
