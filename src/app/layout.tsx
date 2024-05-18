@@ -7,6 +7,7 @@ import MainLayout from "./_components/main-layout";
 import type { AppProps } from "next/app";
 import { Toaster } from "@/components/ui/toaster";
 import SessionProvider from "@/components/SessionProvider";
+import GoogleAnalytics from "./_components/GoogleAnalytics";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -28,6 +29,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <GoogleAnalytics />
       <body className={`font-sans ${inter.variable} transition-colors delay-100`}>
         <ThemeProvider
           attribute="class"
