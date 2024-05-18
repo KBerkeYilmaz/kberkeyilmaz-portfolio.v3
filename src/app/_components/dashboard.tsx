@@ -71,21 +71,7 @@ export default function DashboardLayout({
                 className="flex items-center gap-3 rounded-lg bg-muted px-3 py-2 text-primary transition-all hover:text-primary"
               >
                 <Package className="h-4 w-4" />
-                Products{" "}
-              </Link>
-              <Link
-                href="#"
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-              >
-                <Users className="h-4 w-4" />
-                Customers
-              </Link>
-              <Link
-                href="#"
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-              >
-                <LineChart className="h-4 w-4" />
-                Analytics
+                Works{" "}
               </Link>
             </nav>
           </div>
@@ -143,13 +129,6 @@ export default function DashboardLayout({
                 >
                   <Package className="h-5 w-5" />
                   Works
-                </Link>
-                <Link
-                  href="#"
-                  className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
-                >
-                  <LineChart className="h-5 w-5" />
-                  Analytics
                 </Link>
               </nav>
               <div className="mt-auto">

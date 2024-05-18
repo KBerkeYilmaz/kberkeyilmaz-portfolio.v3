@@ -4,7 +4,7 @@ import Image from "next/image";
 export function LinkBtnGroup() {
   return (
     <div className="flex gap-2 mt-auto">
-      <Button variant="outline" size="icon" asChild>
+      {/* <Button variant="outline" size="icon" asChild>
         <a
           href="mailto:kberkeyilmaz@gmail.com"
           target="_blank"
@@ -12,7 +12,7 @@ export function LinkBtnGroup() {
         >
           <Mail className="h-4 w-4" />
         </a>
-      </Button>
+      </Button> */}
 
       <Button variant="outline" size="icon" asChild>
         <a

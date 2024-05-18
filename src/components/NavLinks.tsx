@@ -24,14 +24,8 @@ const NavLinks = () => {
       <Link key="home" href="/" className={getLinkClass("/")}>
         Home
       </Link>
-      <Link key="about" href="/about" className={getLinkClass("/about")}>
-        About
-      </Link>
       <Link key="works" href="/works" className={getLinkClass("/works")}>
         Works
-      </Link>
-      <Link key="blog" href="/blog" className={getLinkClass("/blog")}>
-        Blog
       </Link>
       <Link key="cv" href="/cv" className={getLinkClass("/cv")}>
         CV
