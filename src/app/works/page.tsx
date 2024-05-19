@@ -37,12 +37,13 @@ const works = [
     // image: "https://via.placeholder.com/150",
   },
   {
-    name: "E-Commerce Web App",
-    description: "This is a project",
+    name: "E-Commerce MVC Backend",
+    description:
+      "My first initiative at backend, a simple MVC API server. Backend is in Vanilla PHP, hat to learn ins and outs of PHP and MVC architecture. I've used MySQL for DB, and deployed on a shared hosting server. View component is in React, for succesfull API calls and caching meeting with this project needs, I've used Axios and SWC, form validation from React-Form-Fook and React Router as frontend navigation. ",
     // stack: ["React", "Node", "TypeScript"],
     links: {
-      github: "https://github.com",
-      demo: "https://demo.com",
+      github: "https://github.com/KBerkeYilmaz/e-commerce-app-kutalmis",
+      demo: "https://react-ecommerce-test-kbyilmaz.vercel.app",
     },
     // image: "https://via.placeholder.com/150",
   },
@@ -52,7 +53,7 @@ const Works: NextPage = async () => {
   return (
     <div className="flex h-full w-full animate-fadeIn flex-col items-center justify-start">
       <h1 className="mb-4 text-4xl font-semibold">Works</h1>
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 overflow-auto">
+      <div className="grid grid-cols-1 gap-4 overflow-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {works.map((work, index) => (
           <WorkCard key={index} work={work} />
         ))}
