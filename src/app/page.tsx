@@ -1,6 +1,7 @@
 // import { CreatePost } from "@/app/_components/create-post";
 // import { getServerAuthSession } from "@/server/auth";
 // import { api } from "@/trpc/server";
+import { animate, scroll } from "motion";
 import type { NextPage } from "next";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Plane, MoveRight } from "lucide-react";
