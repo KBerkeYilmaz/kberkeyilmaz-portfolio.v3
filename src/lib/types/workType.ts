@@ -4,7 +4,7 @@ export interface workType {
   description?: string;
   image?: string;
   links?: {
-    github: string;
-    demo: string;
+    github?: string;
+    demo?: string;
   };
 }

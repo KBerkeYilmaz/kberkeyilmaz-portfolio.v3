@@ -20,7 +20,7 @@ const AppLayout = ({ children }: { children: React.ReactNode }) => {
               <div>
                 <h1>Kutalmış Berke Yılmaz</h1>
                 <span className="text-pretty text-xs text-slate-400 ">
-                  Software Developer
+                  Fullstack Master
                 </span>
               </div>
             </div>
